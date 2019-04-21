@@ -2,14 +2,13 @@
 
 from odoo import models, fields, api
 
-# class employee_car_request(models.Model):
-#     _name = 'employee_car_request.employee_car_request'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+class CarRequest(models.Model):
+    _name = 'car_requst'  # table in database
+    _rec_name = 'name'
+    _description = 'Car Request'
+    name = fields.Char(string="Request", required=True, )
+    date_from = fields.Char(string=" Starting Date ", defult=fields.datetime.now(), )
+    date_to = fields.Char(string=" End Date ", required=False, )
+    employee_id = fields.Many2one(comodel_name="hr.employee", string="Employee", required=True, )
+    car_id = fields.Many2one(comodel_name="fleet.vehicl", string="Car", required=True, )

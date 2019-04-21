@@ -3,7 +3,7 @@
     'name': "Employee Car Request",
 
     'summary': """
-    Request a car and get the apprival         """,
+        Request a car and get the approval""",
 
     'description': """
         Long description of module's purpose
@@ -19,11 +19,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr','fleet',],
+    'depends': ['base', 'hr', 'fleet', ],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],
