@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
         <record id="view_car_requset" model="ir.ui.view">
             <field name="name">view.car.requset</field>
             <field name="model">car.request</field>
@@ -14,7 +13,9 @@
                                 <field name="name" placeholder="Requset"/>
                             </h1>
                         </div>
-                        <group>
+
+                       <group>
+                            <group>
                             <field name="date_from"/>
                             <field name="date_to"/>
                         </group>
@@ -22,21 +23,9 @@
                             <field name="employee_id"/>
                             <field name="car_id"/>
                         </group>
+                       </group>
                     </sheet>
                 </form>
-            </field>
-        </record>
-        <record id="view_car_request_tree" model="ir.ui.view">
-            <field name="name">view.car.request.tree</field>
-            <field name="model">car.request</field>
-            <field name="arch" type="xml">
-                <tree string="Car Request Tree">
-                    <field name="name"/>
-                    <field name="employee_id"/>
-                    <field name="car_id"/>
-                    <field name="date_from"/>
-                    <field name="date_to"/>
-                </tree>
             </field>
         </record>
 
@@ -54,15 +43,8 @@
                 </p>
             </field>
         </record>
-
-        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
         <menuitem id="menu_car_request_root" name="Car Request" sequence="10"/>
-        <!-- This Menu Item Must have a parent -->
         <menuitem id="menu_car_request_categ" name="Car Request" parent="menu_car_request_root" sequence="1"/>
-        <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="menu_car_request" name="Car Request" parent="menu_car_request_categ"
-                  action="action_car_request_views" sequence="1"/>
-
-
+        <menuitem id="menu_car_request" name="Car Request" parent="menu_car_request_categ" action="action_car_request_views" sequence="1"/>
     </data>
 </odoo>
